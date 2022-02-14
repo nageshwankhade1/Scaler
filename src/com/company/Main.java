@@ -10,33 +10,21 @@ import java.util.stream.Stream;
 public class Main {
     static BigInteger amount = BigInteger.ZERO;
     public static void main(String[] args) {
-        /*Scanner sc = new Scanner(System.in);
-        amount = new BigInteger(sc.nextLine());
-        int noOfOperation = Integer.parseInt(sc.nextLine());
-        System.out.println(amount);
-        System.out.println(noOfOperation);
-        for(int i=0;i<noOfOperation;i++){
-            Integer type = Integer.parseInt(sc.next().trim());
-            System.out.println("type::"+type);
-
-            BigInteger tempAmount = new BigInteger(sc.nextLine().trim());
-
-            operation(type, tempAmount);
-
-        }
-*/
-
-  /*      //solve("scaler");
-        Stream<BigDecimal> input = Stream.of(new BigDecimal(1), null, new BigDecimal(2), new BigDecimal(-1));
-        input.filter(x->x!=null).filter(x->x.compareTo(BigDecimal.ZERO)>0);
-
-        //System.out.println(input);
-        input.forEach(System.out::println);*/
-
-        System.out.println(-6%1000000007);
-
+        System.out.println(power(3,2));
       }
 
+      public static int power(long x, long y){
+        long res = 1;
+        while(y!=0){
+
+                if(y%2==1){
+                    res = x * res;
+                }
+                x = x*x;
+                y/=2;
+            }
+        return (int)res;
+      }
     static  void operation(int type, BigInteger tempAmount ){
 
         if(type==1){
